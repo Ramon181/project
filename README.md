@@ -42,6 +42,8 @@ Para instalar y ejecutar la aplicación de prueba técnica, sigue los siguientes
 
 - Instala las dependencias de Composer: $ composer install
 
+- Instala las dependencias de npm: $ npm install
+
 - Crea una base de datos vacía en tu motor de base de datos.
 
 - Copia el archivo .env.example y renómbralo a .env. Luego, actualiza las variables de entorno en el archivo .env con la configuración de tu base de datos.
