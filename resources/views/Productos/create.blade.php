@@ -2,7 +2,7 @@
 <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
     @include("navBar")
     <div class="mx-auto max-w-lg text-center">
-        <h1 class="text-2xl font-bold sm:text-3xl">Creacion de Producto</h1>
+        <h1 class="text-2xl font-bold sm:text-3xl">Creación de Producto</h1>
     </div>
     <form action="{{url('/productos')}}" method="post" enctype="multipart/form-data" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
         @csrf
@@ -10,21 +10,21 @@
             <label for="email" class="sr-only">Nombre</label>
 
             <div class="relative">
-                <input type="text" name="nombre" id="nombre" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="nombre" />
+                <input type="text" name="nombre" id="nombre" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Nombre" />
             </div>
         </div>
         <div>
-            <label for="password" class="sr-only">Código de Referencia</label>
+            <label for="password" class="sr-only">Código de Referencía</label>
 
             <div class="relative">
                 <input type="text" name="sku" id="sku" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Código de Referencia" />
             </div>
         </div>
         <div>
-            <label for="password" class="sr-only">Descripcion</label>
+            <label for="password" class="sr-only">Descripción</label>
 
             <div class="relative">
-                <input type="text" name="descripcion" id="descripcion" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Descripcion" />
+                <input type="text" name="descripcion" id="descripcion" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Descripción" />
             </div>
         </div>
         <div>
