@@ -16,8 +16,18 @@ class ProductoController extends Controller
     public function index()
     {
         //
-        $productos = Tienda::all();
-        return view('Productos.index', ['productos' => $productos]);
+        // $productos = Producto::all();
+        // $tindaId = $productos["tienda_id"];
+        // $tienda = Tienda::find($tindaId);
+        // return view('Productos.index')->with(compact("productos","tienda"));
+        $productos = Producto::all();
+
+        foreach ($productos as $producto) {
+            $tienda = $producto->tienda;
+            $producto->tienda_nombre = $tienda->nombre;
+        }
+
+        return view('Productos.index', compact('productos'));
     }
 
     /**
@@ -43,8 +53,8 @@ class ProductoController extends Controller
         //
         $datosProductos = request()->except("_token");
         if ($request->hasFile("imagen")) {
-            $image = $request->file("imagen")->store("productos");
-            $datosProductos["imagen"]=$image;
+            $image = $request->file("imagen")->store("uploads", "public");
+            $datosProductos["imagen"] = $image;
         }
         Producto::insert($datosProductos);
         return response()->json($datosProductos);
