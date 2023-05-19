@@ -16,10 +16,6 @@ class ProductoController extends Controller
     public function index()
     {
         //
-        // $productos = Producto::all();
-        // $tindaId = $productos["tienda_id"];
-        // $tienda = Tienda::find($tindaId);
-        // return view('Productos.index')->with(compact("productos","tienda"));
         $productos = Producto::all();
 
         foreach ($productos as $producto) {

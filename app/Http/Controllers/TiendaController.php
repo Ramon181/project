@@ -15,9 +15,14 @@ class TiendaController extends Controller
     public function index()
     {
         //
-        $tienda = Tienda::all();
-        return view('Tienda.index', ['tienda' => $tienda]);
-        // return view('Tienda.index',$datos);
+        $tiendas = Tienda::all();
+
+        foreach ($tiendas as $tienda) {
+            $producto_nombres = $tienda->producto->pluck('nombre')->toArray();
+            $tienda->producto_nombres = $producto_nombres;
+        }
+
+        return view('Tienda.index', compact('tiendas'));
     }
 
     /**

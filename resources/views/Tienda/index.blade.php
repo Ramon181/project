@@ -23,7 +23,7 @@
             </thead>
 
             <tbody class="">
-                @foreach($tienda as $t)
+                @foreach($tiendas as $t)
                 <tr>
                     <td class="px-4 py-2">
                         {{$t->id}}
@@ -32,6 +32,11 @@
                         {{ $t->nombre }}
                     </td>
                     <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{ $t->fecha_apertura }}</td>
+                    <td>
+                        @foreach ($t->producto_nombres as $nombre)
+                        <span>{{ $nombre }}</span>
+                        @endforeach
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
