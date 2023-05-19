@@ -41,9 +41,4 @@
         <a href="{{url('/tienda/create')}}" class="rounded-lg bg-blue-500 m-5 px-5 py-3 text-sm font-medium text-white">Agregar Tienda</a>
 
     </div>
-    <script>
-        export default {
-            props: ['tienda']
-        }
-    </script>
 </div>

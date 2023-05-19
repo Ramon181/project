@@ -15,8 +15,9 @@ class TiendaController extends Controller
     public function index()
     {
         //
-        $datos["tienda"] = Tienda::all();
-        return view('Tienda.index',$datos);
+        $tienda = Tienda::all();
+        return view('Tienda.index', ['tienda' => $tienda]);
+        // return view('Tienda.index',$datos);
     }
 
     /**

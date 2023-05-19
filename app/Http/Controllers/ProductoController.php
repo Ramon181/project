@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tienda;
+use App\Models\Producto;
 
 class ProductoController extends Controller
 {
@@ -14,7 +16,8 @@ class ProductoController extends Controller
     public function index()
     {
         //
-        return view("Productos.index");
+        $productos = Tienda::all();
+        return view('Productos.index', ['productos' => $productos]);
     }
 
     /**
@@ -25,7 +28,8 @@ class ProductoController extends Controller
     public function create()
     {
         //
-        return view("Productos.create");
+        $tienda = Tienda::all();
+        return view("Productos.create", ['tienda' => $tienda]);
     }
 
     /**
@@ -37,6 +41,13 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //
+        $datosProductos = request()->except("_token");
+        if ($request->hasFile("imagen")) {
+            $image = $request->file("imagen")->store("productos");
+            $datosProductos["imagen"]=$image;
+        }
+        Producto::insert($datosProductos);
+        return response()->json($datosProductos);
     }
 
     /**

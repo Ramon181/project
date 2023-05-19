@@ -7,10 +7,10 @@
                     Inicio
                 </a>
 
-                <a href="{{url('/products')}}" class="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-blue-700">
+                <a href="{{url('/productos')}}" class="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-blue-700">
                    Lista de Productos
                 </a>
-                <a href="{{url('/products/create')}}" class="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-blue-700">
+                <a href="{{url('/productos/create')}}" class="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-blue-700">
                     Crear Producto
                 </a>
                 <a href="{{url('/tienda')}}" class="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-blue-700">
