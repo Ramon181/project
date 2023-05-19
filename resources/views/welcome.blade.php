@@ -6,10 +6,11 @@
   @vite('resources/css/app.css')
 </head>
 <body>
-  <div class=" flex justify-center max-w-[50%] m-auto p-4">
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+  <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    @include("navBar")
+    <div class="mx-auto max-w-lg text-center">
+        <h1 class="text-2xl font-bold sm:text-3xl">Prueva Tecnica</h1>
+    </div>
   </div>
 </body>
 </html>

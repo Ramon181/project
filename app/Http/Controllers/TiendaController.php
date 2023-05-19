@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tienda;
 
 class TiendaController extends Controller
 {
@@ -14,6 +15,8 @@ class TiendaController extends Controller
     public function index()
     {
         //
+        $datos["tienda"] = Tienda::all();
+        return view('Tienda.index',$datos);
     }
 
     /**
@@ -24,6 +27,7 @@ class TiendaController extends Controller
     public function create()
     {
         //
+        return view("Tienda.create");
     }
 
     /**
@@ -35,6 +39,9 @@ class TiendaController extends Controller
     public function store(Request $request)
     {
         //
+        $datosTienda = request()->except("_token");
+        Tienda::insert($datosTienda);
+        return redirect("/");
     }
 
     /**
